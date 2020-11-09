@@ -90,7 +90,7 @@ function engineerInquirer() {
             choices: ["Engineer", "Intern", "I don't want to add any more team members"]
         }
     ]).then(val => {
-        members.push(new Engineer(val.name, val.id, val.email, val.school));
+        members.push(new Engineer(val.name, val.id, val.email, val.github));
 
         if (val.role === 'Engineer') {
             engineerInquirer();
