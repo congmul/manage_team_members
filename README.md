@@ -13,7 +13,7 @@ You will build a software engineering team generator command line application.
 
 ## Usage
 node app.js to run this program <br>
-<img src = "./img/operatingGif.gif" width="800">
+<img src = "./asset/operatingGif.gif" width="800">
 
 
 
