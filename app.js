@@ -29,12 +29,26 @@ inquirer.prompt([
     {
         type: "input",
         name: "id",
-        message: "What is your manager's id?"
+        message: "What is your manager's id?",
+        validate: answer => {
+            const pass = answer.match(/^[1-9]\d*$/);
+            if(pass){
+                return true;
+            }
+            return "Please enter a positive number"
+        }
     },
     {
         type: "input",
         name: "email",
-        message: "What is your manager's email?"
+        message: "What is your manager's email?",
+        validate: answer => {
+            const pass = answer.match(/\S+@\S+\.\S+/);
+            if(pass){
+                return true;
+            }
+            return "Please enter a valid email address"
+        }
     },
     {
         type: "input",
@@ -71,12 +85,25 @@ function engineerInquirer() {
             type: "input",
             name: "id",
             message: "What is your engineer's id?",
-            validate: val => validate(val)
+            validate: answer => {
+                const pass = answer.match(/^[1-9]\d*$/);
+                if(pass){
+                    return validate(answer);
+                }
+                return "Please enter a positive number"
+            }
         },
         {
             type: "input",
             name: "email",
-            message: "What is your engineer's email?"
+            message: "What is your engineer's email?",
+            validate: answer => {
+                const pass = answer.match(/\S+@\S+\.\S+/);
+                if(pass){
+                    return true;
+                }
+                return "Please enter a valid email address"
+            }
         },
         {
             type: "input",
@@ -117,12 +144,25 @@ function internInquirer() {
             type: "input",
             name: "id",
             message: "What is your intern's id?",
-            validate: val => validate(val)
+            validate: answer => {
+                const pass = answer.match(/^[1-9]\d*$/);
+                if(pass){
+                    return validate(answer);
+                }
+                return "Please enter a positive number"
+            }
         },
         {
             type: "input",
             name: "email",
-            message: "What is your intern's email?"
+            message: "What is your intern's email?",
+            validate: answer => {
+                const pass = answer.match(/\S+@\S+\.\S+/);
+                if(pass){
+                    return true;
+                }
+                return "Please enter a valid email address"
+            }
         },
         {
             type: "input",
